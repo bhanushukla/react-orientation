@@ -64,27 +64,15 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "60d85b10a565fdf2f432e9fc08c19efb.png";
 
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "24e4b13fa80925231dd043324a0ce407.png";
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(5);
+var content = __webpack_require__(3);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -98,7 +86,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(5)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -130,13 +118,13 @@ if(false) {
 }
 
 /***/ }),
-/* 3 */
+/* 1 */
 /***/ (function(module, exports) {
 
 module.exports = require("react");
 
 /***/ }),
-/* 4 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -148,21 +136,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(3);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _index = __webpack_require__(2);
+var _index = __webpack_require__(0);
 
 var _index2 = _interopRequireDefault(_index);
-
-var _landscape = __webpack_require__(0);
-
-var _landscape2 = _interopRequireDefault(_landscape);
-
-var _portrait = __webpack_require__(1);
-
-var _portrait2 = _interopRequireDefault(_portrait);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -184,27 +164,25 @@ var Orientation = function (_React$Component) {
   _createClass(Orientation, [{
     key: 'render',
     value: function render() {
-      console.log(_landscape2.default, _portrait2.default);
+      console.log(this.props);
       if (this.props.type === 'landscape') {
         return _react2.default.createElement(
           'div',
           { id: 'warning-wrapper-landscape', className: this.props.className },
-          _react2.default.createElement('img', { src: _landscape2.default, className: this.props.className, alt: 'Rotate to landscape' }),
-          _react2.default.createElement(
+          this.props.children || _react2.default.createElement(
             'div',
-            { className: 'header-info' },
-            ' Please rotate your device to landscape mode.'
+            { className: 'message' },
+            'Please rotate your device to landscape mode.'
           )
         );
       }
       return _react2.default.createElement(
         'div',
         { id: 'warning-wrapper-portrait', className: this.props.className },
-        _react2.default.createElement('img', { src: _portrait2.default, className: '', alt: 'logo' }),
-        _react2.default.createElement(
+        this.props.children || _react2.default.createElement(
           'div',
-          { className: 'header-info' },
-          ' Please rotate your device to portrait mode.'
+          { className: 'orientation-message' },
+          'Please rotate your device to portrait mode.'
         )
       );
     }
@@ -216,21 +194,21 @@ var Orientation = function (_React$Component) {
 exports.default = Orientation;
 
 /***/ }),
-/* 5 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
 // module
-exports.push([module.i, "#warning-wrapper-landscape {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  background: rgba(255, 255, 255, 0.95);\n  display: none;\n}\n@media only screen and ( max-width: 768px) and ( min-aspect-ratio: 13/9 ) {\n  #warning-wrapper-landscape {\n    display:none;\n  }\n}\n@media only screen and ( max-width:768px ) and ( max-aspect-ratio: 13/9 ) {\n  #warning-wrapper-landscape {\n    display:block;\n  }\n}\n#warning-wrapper-portrait {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  background: rgba(255, 255, 255, 0.95);\n  display: none;\n}\n@media only screen and ( max-width: 768px) and ( max-aspect-ratio: 13/9 ) {\n  #warning-wrapper-portrait {\n    display:none;\n  }\n}\n@media only screen and ( max-width:768px ) and ( min-aspect-ratio: 13/9 ) {\n  #warning-wrapper-portrait {\n    display:block;\n  }\n}\n", ""]);
+exports.push([module.i, "#warning-wrapper-landscape {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  background: rgba(255, 255, 255, 0.95);\n  z-index: 999999999999;\n  display: none;\n}\n.orientation-message {\n  top: 45%;\n  left: 27%;\n  position: absolute;\n}\n@media only screen and ( max-width: 768px) and ( min-aspect-ratio: 13/9 ) {\n  #warning-wrapper-landscape {\n    display:none;\n  }\n}\n@media only screen and ( max-width:768px ) and ( max-aspect-ratio: 13/9 ) {\n  #warning-wrapper-landscape {\n    display:block;\n  }\n}\n#warning-wrapper-portrait {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  background: rgba(255, 255, 255, 0.95);\n  display: none;\n}\n@media only screen and ( max-width: 768px) and ( max-aspect-ratio: 13/9 ) {\n  #warning-wrapper-portrait {\n    display:none;\n  }\n}\n@media only screen and ( max-width:768px ) and ( min-aspect-ratio: 13/9 ) {\n  #warning-wrapper-portrait {\n    display:block;\n  }\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 6 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -312,7 +290,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 7 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -378,7 +356,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(8);
+var	fixUrls = __webpack_require__(6);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -694,7 +672,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, exports) {
 
 
