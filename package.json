@@ -24,6 +24,10 @@
     "type": "git",
     "url": "git+https://github.com/bhanushukla/react-orientation.git"
   },
+  "bugs": {
+    "url": "https://github.com/bhanushukla/react-orientation/issues"
+  },
+  "homepage": "https://github.com/bhanushukla/react-orientation#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
