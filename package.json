@@ -20,6 +20,10 @@
     "name": "Bhanu Shukla",
     "email": "shuklabhanu1@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhanushukla/react-orientation.git"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
